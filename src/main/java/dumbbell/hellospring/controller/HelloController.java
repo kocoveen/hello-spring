@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-    @GetMapping("hello") // <- URL이 hello
+    @GetMapping("hello") // <- URL이름이 hello라는 것
     public String hello(Model model) {
         model.addAttribute("data", "spring!!");
         return "hello";
-        /* resources:templates에 리턴 값이 문자이면
+        /* resources:templates에 hello라는 파일로 들어가서
+         resources:templates에 리턴 값이 문자이면
          파일명이 문자.html으로 model 키를 넘기면서 실행
          */
     }
@@ -22,7 +23,7 @@ public class HelloController {
     public String helloMvc(@RequestParam("name") String name, Model model) {
         model.addAttribute("name", name);
         return "hello-template";
-    } // requestParam은 URL 뒤에 ?name=어쩌구 처럼 어쩌구라는 값을 templates 파일의 리턴값으로 된 파일명으로 넘기면서 실행
+    } // requestParam은 URL 뒤에 ?name=어쩌구 처럼 어쩌구라는 값을 리턴값과 같은 이름의 templates 파일의 파일명으로 넘기면서 실행
 
     @GetMapping("hello-string")
     @ResponseBody
