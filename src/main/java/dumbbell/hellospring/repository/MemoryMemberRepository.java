@@ -1,7 +1,6 @@
 package dumbbell.hellospring.repository;
 
 import dumbbell.hellospring.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
