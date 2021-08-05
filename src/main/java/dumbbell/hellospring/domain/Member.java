@@ -1,10 +1,15 @@
 package dumbbell.hellospring.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Member {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // @Id는 PK, identity는 1씩 증가하는 id
     private Long id;
     private String name;
 
+    @Column(name = "username")
     public Long getId() {
         return id;
     }
